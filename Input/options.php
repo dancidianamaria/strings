@@ -79,7 +79,6 @@ function set_options(){
                 while ($i<$argc and strpos($argv[$i],'-')===false)
                 {
                     array_push($i_filters, $argv[$i]);
-                    array_push($i_filters_applied,$argv[$i]);
                     $i++;
 
                 }
@@ -92,7 +91,6 @@ function set_options(){
                 while ($i<$argc and strpos($argv[$i],'-')===false)
                 {
                     array_push($q_filters, $argv[$i]);
-                    array_push($q_filters_applied,$argv[$i]);
                     $i++;
 
                 }
@@ -122,6 +120,10 @@ function set_options(){
                 }
 
                 break;
+            default:
+                {
+                    throw new Exception("Incorrect command! Error!");
+                }
 
         }
     }

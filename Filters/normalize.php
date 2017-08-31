@@ -23,15 +23,19 @@ function filter_normalize_query($token_query){
 
 function normalize($tokens){
 
+    $tokens2 = [];
+
     foreach ($tokens as $key => $token) {
 
 
         $conv_str = iconv('UTF-8', 'ASCII//TRANSLIT', $token);
 
-        $tokens[$key] = $conv_str;
+        array_push($tokens2,$conv_str);
     }
 
-    return $tokens;
+    //var_dump($tokens2);
+
+    return $tokens2;
 
 
 }
